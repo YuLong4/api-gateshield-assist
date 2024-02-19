@@ -25,8 +25,8 @@ public class GatewayCenterService {
         paramMap.put("gatewayId", gatewayId);
         paramMap.put("gatewayName", gatewayName);
         paramMap.put("gatewayAddress", gatewayAddress);
-        String resultStr = HttpUtil.post(address + "/wg/admin/config/registerGateway", paramMap, 350);
-        Result result = JSON.parseObject(resultStr, Result.class);
+        String resultStr = HttpUtil.post(address + "/wg/admin/config/registerGateway", paramMap, 1000);
+        Result<Boolean> result = JSON.parseObject(resultStr, new TypeReference<Result<Boolean>>(){});
         logger.info("向网关中心注册网关算力服务 gatewayId：{} gatewayName：{} gatewayAddress：{} 注册结果：{}", gatewayId, gatewayName, gatewayAddress, resultStr);
         if (!"0000".equals(result.getCode()))
             throw new GatewayException("网关服务注册异常 [gatewayId：" + gatewayId + "] 、[gatewayAddress：" + gatewayAddress + "]");

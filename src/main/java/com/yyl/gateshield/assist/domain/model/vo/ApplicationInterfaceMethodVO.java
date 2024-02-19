@@ -78,8 +78,8 @@ public class ApplicationInterfaceMethodVO {
         this.httpCommandType = httpCommandType;
     }
 
-    public Integer getAuth() {
-        return auth;
+    public boolean getAuth() {
+        return auth == 1;
     }
 
     public void setAuth(Integer auth) {
