@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="291403a7-21b7-4ebf-a48d-8495251236f6" name="变更" comment="" />
+    <list default="true" id="291403a7-21b7-4ebf-a48d-8495251236f6" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/model/aggregates/ApplicationSystemRichInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/model/vo/ApplicationInterfaceMethodVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/model/vo/ApplicationInterfaceVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/model/vo/ApplicationSystemVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/application/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/application/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/common/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/config/GatewayAutoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/config/GatewayAutoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/service/RegisterGatewayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/service/GatewayCenterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/yyl/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/yyl/ApiTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +29,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -27,15 +42,37 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/model/vo" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/model/vo" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yyl.gateshield.assist.domain.model.aggregates" />
       <recent name="com.yyl.gateshield.assist.common" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ApiTest.test_register_gateway">
+    <configuration name="ApiTest.test_pullApplicationSystemRichInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api-gateshield-assist" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yyl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yyl" />
+      <option name="MAIN_CLASS_NAME" value="com.yyl.ApiTest" />
+      <option name="METHOD_NAME" value="test_pullApplicationSystemRichInfo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiTest.test_register_gateway" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api-gateshield-assist" />
       <extension name="coverage">
@@ -55,6 +92,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ApiTest.test_register_gateway" />
+        <item itemvalue="JUnit.ApiTest.test_pullApplicationSystemRichInfo" />
       </list>
     </recent_temporary>
   </component>
@@ -67,10 +105,22 @@
       <option name="presentableId" value="Default" />
       <updated>1708172206200</updated>
       <workItem from="1708172207317" duration="4082000" />
+      <workItem from="1708257594318" duration="2602000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
