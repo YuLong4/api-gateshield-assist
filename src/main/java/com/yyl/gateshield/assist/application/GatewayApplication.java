@@ -1,5 +1,6 @@
 package com.yyl.gateshield.assist.application;
 
+import com.alibaba.fastjson.JSON;
 import com.yyl.gateshield.assist.config.GatewayServiceProperties;
 import com.yyl.gateshield.assist.domain.model.aggregates.ApplicationSystemRichInfo;
 import com.yyl.gateshield.assist.domain.model.vo.ApplicationInterfaceMethodVO;
@@ -34,35 +35,37 @@ public class GatewayApplication implements ApplicationListener<ContextRefreshedE
     }
 
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+    public void onApplicationEvent(ContextRefreshedEvent event) {
         // 1. 注册网关服务；每一个用于转换 HTTP 协议泛化调用到 RPC 接口的网关都是一个算力，这些算力需要注册网关配置中心
-        gatewayCenterService.doRegister(properties.getGatewayAddress(),
+        gatewayCenterService.doRegister(properties.getAddress(),
                 properties.getGroupId(),
                 properties.getGatewayId(),
                 properties.getGatewayName(),
                 properties.getGatewayAddress());
+
         // 2. 拉取网关配置；每个网关算力都会在注册中心分配上需要映射的RPC服务信息，包括；系统、接口、方法
         ApplicationSystemRichInfo applicationSystemRichInfo = gatewayCenterService.pullApplicationSystemRichInfo(properties.getAddress(), properties.getGatewayId());
+        logger.info("拉取的网关配置: " + JSON.toJSONString(applicationSystemRichInfo));
         List<ApplicationSystemVO> applicationSystemVOList = applicationSystemRichInfo.getApplicationSystemVOList();
         for (ApplicationSystemVO system : applicationSystemVOList) {
-            List<ApplicationInterfaceVO> interfaceVOList = system.getInterfaceList();
-            for (ApplicationInterfaceVO interfaceVO : interfaceVOList) {
-                //2.1 创建配置信息加载注册
-                configuration.registryConfig(system.getSystemId(), system.getSystemRegistry(), interfaceVO.getInterfaceId(), interfaceVO.getInterfaceVersion());
-                List<ApplicationInterfaceMethodVO> methodVOList = interfaceVO.getMethodList();
-                //2.1注册系统服务接口信息
-                for (ApplicationInterfaceMethodVO methodVO : methodVOList) {
+            List<ApplicationInterfaceVO> interfaceList = system.getInterfaceList();
+            for (ApplicationInterfaceVO itf : interfaceList) {
+                // 2.1 创建配置信息加载注册
+                logger.info("执行2.1 创建配置信息加载注册,registryConfig参数为:" + system.getSystemId() +" "+ system.getSystemRegistry() + " " + itf.getInterfaceId()+" " + itf.getInterfaceVersion());
+                configuration.registryConfig(system.getSystemId(), system.getSystemRegistry(), itf.getInterfaceId(), itf.getInterfaceVersion());
+                List<ApplicationInterfaceMethodVO> methodList = itf.getMethodList();
+                // 2.2 注册系统服务接口信息
+                for (ApplicationInterfaceMethodVO method : methodList) {
                     HttpStatement httpStatement = new HttpStatement(
                             system.getSystemId(),
-                            interfaceVO.getInterfaceId(),
-                            methodVO.getMethodId(),
-                            methodVO.getParameterType(),
-                            methodVO.getUri(),
-                            HttpCommandType.valueOf(methodVO.getHttpCommandType()),
-                            methodVO.getAuth()
-                    );
+                            itf.getInterfaceId(),
+                            method.getMethodId(),
+                            method.getParameterType(),
+                            method.getUri(),
+                            HttpCommandType.valueOf(method.getHttpCommandType()),
+                            method.isAuth());
                     configuration.addMapper(httpStatement);
-                    logger.info("网关服务注册映射 系统：{} 接口：{} 方法：{}", system.getSystemId(), interfaceVO.getInterfaceId(), methodVO.getMethodId());
+                    logger.info("网关服务注册映射 系统：{} 接口：{} 方法：{}", system.getSystemId(), itf.getInterfaceId(), method.getMethodId());
                 }
             }
         }

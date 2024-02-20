@@ -5,10 +5,11 @@ import com.yyl.gateshield.assist.application.GatewayApplication;
 import com.yyl.gateshield.assist.domain.service.GatewayCenterService;
 import com.yyl.gateshield.core.session.defaults.DefaultGatewaySessionFactory;
 import com.yyl.gateshield.core.socket.GatewaySocketServer;
-import io.netty.channel.Channel;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+
+import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -35,6 +36,7 @@ public class GatewayAutoConfig {
         return new GatewayApplication(properties, gatewayCenterService, configuration);
     }
 
+    //创建网关配置对象
     @Bean
     public com.yyl.gateshield.core.session.Configuration gatewayCoreConfiguration(GatewayServiceProperties properties) {
         com.yyl.gateshield.core.session.Configuration configuration = new com.yyl.gateshield.core.session.Configuration();

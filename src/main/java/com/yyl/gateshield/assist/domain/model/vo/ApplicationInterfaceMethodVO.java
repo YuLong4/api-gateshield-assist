@@ -78,7 +78,7 @@ public class ApplicationInterfaceMethodVO {
         this.httpCommandType = httpCommandType;
     }
 
-    public boolean getAuth() {
+    public boolean isAuth() {
         return auth == 1;
     }
 

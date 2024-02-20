@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="291403a7-21b7-4ebf-a48d-8495251236f6" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/application/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/application/GatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/config/GatewayAutoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/config/GatewayAutoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/config/GatewayServiceProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/config/GatewayServiceProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/model/vo/ApplicationInterfaceMethodVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/model/vo/ApplicationInterfaceMethodVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/service/GatewayCenterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/service/GatewayCenterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/yyl/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/yyl/ApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyl/gateshield/assist/application/GatewayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyl/gateshield/assist/application/GatewayApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyl/gateshield/assist/config/GatewayAutoConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyl/gateshield/assist/config/GatewayAutoConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyl/gateshield/assist/config/GatewayServiceProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyl/gateshield/assist/config/GatewayServiceProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yyl/ApiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yyl/ApiTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +47,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="库" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -53,7 +62,7 @@
       <recent name="com.yyl.gateshield.assist.common" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApiTest.test_register_gateway">
+  <component name="RunManager" selected="JUnit.ApiTest.test_pullApplicationSystemRichInfo">
     <configuration name="ApiTest.test_pullApplicationSystemRichInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api-gateshield-assist" />
       <extension name="coverage">
@@ -88,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ApiTest.test_register_gateway" />
         <item itemvalue="JUnit.ApiTest.test_pullApplicationSystemRichInfo" />
+        <item itemvalue="JUnit.ApiTest.test_register_gateway" />
       </list>
     </recent_temporary>
   </component>
@@ -104,7 +113,8 @@
       <workItem from="1708172207317" duration="4082000" />
       <workItem from="1708257594318" duration="2602000" />
       <workItem from="1708347736582" duration="232000" />
-      <workItem from="1708347974769" duration="1982000" />
+      <workItem from="1708347974769" duration="3632000" />
+      <workItem from="1708360013111" duration="8491000" />
     </task>
     <servers />
   </component>

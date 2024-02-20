@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * 网关服务注册配置
  */
-@ConfigurationProperties("api-gateway")
+@ConfigurationProperties("api-gateshield")
 public class GatewayServiceProperties {
 
     /** 注册中心地址 */

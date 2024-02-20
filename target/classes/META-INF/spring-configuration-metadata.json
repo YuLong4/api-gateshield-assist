@@ -1,38 +1,38 @@
 {
   "groups": [
     {
-      "name": "api-gateway",
+      "name": "api-gateshield",
       "type": "com.yyl.gateshield.assist.config.GatewayServiceProperties",
       "sourceType": "com.yyl.gateshield.assist.config.GatewayServiceProperties"
     }
   ],
   "properties": [
     {
-      "name": "api-gateway.address",
+      "name": "api-gateshield.address",
       "type": "java.lang.String",
       "description": "注册中心地址",
       "sourceType": "com.yyl.gateshield.assist.config.GatewayServiceProperties"
     },
     {
-      "name": "api-gateway.gateway-address",
+      "name": "api-gateshield.gateway-address",
       "type": "java.lang.String",
       "description": "网关地址",
       "sourceType": "com.yyl.gateshield.assist.config.GatewayServiceProperties"
     },
     {
-      "name": "api-gateway.gateway-id",
+      "name": "api-gateshield.gateway-id",
       "type": "java.lang.String",
       "description": "网关ID",
       "sourceType": "com.yyl.gateshield.assist.config.GatewayServiceProperties"
     },
     {
-      "name": "api-gateway.gateway-name",
+      "name": "api-gateshield.gateway-name",
       "type": "java.lang.String",
       "description": "网关名称",
       "sourceType": "com.yyl.gateshield.assist.config.GatewayServiceProperties"
     },
     {
-      "name": "api-gateway.group-id",
+      "name": "api-gateshield.group-id",
       "type": "java.lang.String",
       "description": "分组ID",
       "sourceType": "com.yyl.gateshield.assist.config.GatewayServiceProperties"
