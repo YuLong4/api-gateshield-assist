@@ -25,7 +25,13 @@ public class GatewayCenterService {
         paramMap.put("gatewayId", gatewayId);
         paramMap.put("gatewayName", gatewayName);
         paramMap.put("gatewayAddress", gatewayAddress);
-        String resultStr = HttpUtil.post(address + "/wg/admin/config/registerGateway", paramMap);
+        String resultStr;
+        try {
+            resultStr = HttpUtil.post(address + "/wg/admin/config/registerGateway", paramMap);
+        } catch (Exception e) {
+            logger.error("网关服务注册异常，链接资源不可用：{}", address + "/wg/admin/config/registerGateway");
+            throw e;
+        }
         Result<Boolean> result = JSON.parseObject(resultStr, new TypeReference<Result<Boolean>>(){});
         logger.info("向网关中心注册网关算力服务 gatewayId：{} gatewayName：{} gatewayAddress：{} 注册结果：{}", gatewayId, gatewayName, gatewayAddress, resultStr);
         if (!"0000".equals(result.getCode()))
@@ -35,7 +41,13 @@ public class GatewayCenterService {
     public ApplicationSystemRichInfo pullApplicationSystemRichInfo(String address, String gatewayId) {
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("gatewayId", gatewayId);
-        String resultStr = HttpUtil.post(address + "/wg/admin/config/queryApplicationSystemRichInfo", paramMap);
+        String resultStr;
+        try {
+            resultStr = HttpUtil.post(address + "/wg/admin/config/queryApplicationSystemRichInfo", paramMap);
+        } catch (Exception e) {
+            logger.error("网关服务拉取异常，链接资源不可用：{}", address + "/wg/admin/config/queryApplicationSystemRichInfo");
+            throw e;
+        }
         Result<ApplicationSystemRichInfo> result = JSON.parseObject(resultStr, new TypeReference<Result<ApplicationSystemRichInfo>>(){});
         logger.info("从网关中心拉取应用服务和接口的配置信息到本地完成注册。gatewayId：{}", gatewayId);
         if (!"0000".equals(result.getCode()))

@@ -32,8 +32,8 @@ public class GatewayAutoConfig {
     }
 
     @Bean
-    public GatewayApplication gatewayApplication(GatewayServiceProperties properties, GatewayCenterService gatewayCenterService, com.yyl.gateshield.core.session.Configuration configuration) {
-        return new GatewayApplication(properties, gatewayCenterService, configuration);
+    public GatewayApplication gatewayApplication(GatewayServiceProperties properties, GatewayCenterService gatewayCenterService, com.yyl.gateshield.core.session.Configuration configuration, Channel gatewaySocketServerChannel) {
+        return new GatewayApplication(properties, gatewayCenterService, configuration, gatewaySocketServerChannel);
     }
 
     //创建网关配置对象
@@ -49,7 +49,7 @@ public class GatewayAutoConfig {
     /**
      * 初始化网关服务 创建服务端 Channel 对象，方便获取和控制网关操作。
      */
-    @Bean
+    @Bean("gatewaySocketServerChannel")
     public Channel initGateway(com.yyl.gateshield.core.session.Configuration configuration) throws ExecutionException, InterruptedException {
         //1.基于配置构建会话工厂
         DefaultGatewaySessionFactory gatewaySessionFactory = new DefaultGatewaySessionFactory(configuration);

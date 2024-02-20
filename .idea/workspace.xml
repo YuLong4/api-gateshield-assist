@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="291403a7-21b7-4ebf-a48d-8495251236f6" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/application/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/application/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/config/GatewayAutoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/config/GatewayAutoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/service/GatewayCenterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyl/gateshield/assist/domain/service/GatewayCenterService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +107,7 @@
       <workItem from="1708347974769" duration="3632000" />
       <workItem from="1708360013111" duration="8491000" />
       <workItem from="1708404971864" duration="3735000" />
+      <workItem from="1708443493627" duration="2821000" />
     </task>
     <servers />
   </component>
