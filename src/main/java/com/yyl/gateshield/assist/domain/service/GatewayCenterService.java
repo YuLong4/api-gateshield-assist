@@ -38,9 +38,10 @@ public class GatewayCenterService {
             throw new GatewayException("网关服务注册异常 [gatewayId：" + gatewayId + "] 、[gatewayAddress：" + gatewayAddress + "]");
     }
 
-    public ApplicationSystemRichInfo pullApplicationSystemRichInfo(String address, String gatewayId) {
+    public ApplicationSystemRichInfo pullApplicationSystemRichInfo(String address, String gatewayId, String systemId) {
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("gatewayId", gatewayId);
+        paramMap.put("systemId", systemId);
         String resultStr;
         try {
             resultStr = HttpUtil.post(address + "/wg/admin/config/queryApplicationSystemRichInfo", paramMap);
@@ -52,6 +53,21 @@ public class GatewayCenterService {
         logger.info("从网关中心拉取应用服务和接口的配置信息到本地完成注册。gatewayId：{}", gatewayId);
         if (!"0000".equals(result.getCode()))
             throw new GatewayException("从网关中心拉取应用服务和接口的配置信息到本地完成注册异常 [gatewayId：" + gatewayId + "]");
+        return result.getData();
+    }
+
+    public Map<String, String> queryRedisConfig(String address){
+        String resultStr;
+        try {
+            resultStr = HttpUtil.post(address + "/wg/admin/config/queryRedisConfig", "");
+        } catch (Exception e) {
+            logger.error("网关服务拉取配置异常，链接资源不可用：{}", address + "/wg/admin/config/queryRedisConfig", e);
+            throw e;
+        }
+        Result<Map<String, String>> result = JSON.parseObject(resultStr, new TypeReference<Result<Map<String, String>>>() {});
+        logger.info("从网关中心拉取Redis配置信息完成。result：{}", resultStr);
+        if (!"0000".equals(result.getCode()))
+            throw new GatewayException("从网关中心拉取Redis配置信息异常");
         return result.getData();
     }
 }
