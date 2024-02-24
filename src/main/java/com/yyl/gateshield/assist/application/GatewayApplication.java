@@ -50,7 +50,7 @@ public class GatewayApplication implements ApplicationContextAware, ApplicationL
                     properties.getGatewayId(),
                     properties.getGatewayName(),
                     properties.getGatewayAddress());
-            addMappers("");
+//            addMappers("");
         } catch (Exception e) {
             logger.error("网关服务启动失败，停止服务。{}", e.getMessage(), e);
             throw e;
@@ -60,6 +60,7 @@ public class GatewayApplication implements ApplicationContextAware, ApplicationL
     public void addMappers(String systemId) {
         // 2. 拉取网关配置；每个网关算力都会在注册中心分配上需要映射的RPC服务信息，包括；系统、接口、方法
         ApplicationSystemRichInfo applicationSystemRichInfo = gatewayCenterService.pullApplicationSystemRichInfo(properties.getAddress(), properties.getGatewayId(), systemId);
+        logger.info("applicationSystemRichInfo: " + JSON.toJSONString(applicationSystemRichInfo));
         List<ApplicationSystemVO> applicationSystemVOList = applicationSystemRichInfo.getApplicationSystemVOList();
         if (applicationSystemVOList.isEmpty()) {
             logger.warn("网关{}服务注册映射为空，请排查 gatewayCenterService.pullApplicationSystemRichInfo 是否检索到此网关算力需要拉取的配置数据。", systemId);
@@ -102,6 +103,8 @@ public class GatewayApplication implements ApplicationContextAware, ApplicationL
 
     public void receiveMessage(Object message) {
         logger.info("[事件通知]接收注册中心推送消息 message：{}", message);
-        addMappers(message.toString().substring(1, message.toString().length()-1));
+        String systemId = message.toString().substring(1, message.toString().length()-1);
+        logger.info("systemId" + systemId);
+        addMappers(systemId);
     }
 }

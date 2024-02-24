@@ -42,6 +42,7 @@ public class GatewayAutoConfig {
     public RedisConnectionFactory redisConnectionFactory(GatewayServiceProperties properties, GatewayCenterService gatewayCenterService) {
         //1.拉取注册中心的 Redis 配置信息
         Map<String, String> redisConfig = gatewayCenterService.queryRedisConfig(properties.getAddress());
+        logger.info("查询到的redisConfig: " + redisConfig + redisConfig.values());
         //2.构建Redis服务
         RedisStandaloneConfiguration standaloneConfig = new RedisStandaloneConfiguration();
         standaloneConfig.setHostName(redisConfig.get("host"));
@@ -56,6 +57,7 @@ public class GatewayAutoConfig {
         //4.创建 Redis 配置
         JedisClientConfiguration clientConfig = JedisClientConfiguration.builder()
                 .connectTimeout(Duration.ofSeconds(2)).clientName("api-gateway-assist-redis-" + properties.getGatewayId()).usePooling().poolConfig(poolConfig).build();
+        logger.info("Redis配置为：standaloneConfig: {}, clientConfig: {}", standaloneConfig, clientConfig);
         //5.实例化 Redis 对象
         return new JedisConnectionFactory(standaloneConfig, clientConfig);
     }
